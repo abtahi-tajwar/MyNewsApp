@@ -66,6 +66,12 @@ nav {
     margin-left: 30px;
     margin-right: 30px;
     color: $ash;
+    ul {
+        padding-left: 20px;
+        li {
+            padding-left: 10px;
+        }
+    }
     h1 {
         padding-bottom: 20px;
         a {
@@ -92,6 +98,11 @@ nav {
         &:nth-child(3){
             font-size: 0.7rem;
         }
+        &:nth-child(5) {
+            cursor: pointer;
+            padding-top: 10px;
+            font-size: 1.2rem;
+        }
     }
     &::after {
         display: block;
@@ -102,6 +113,9 @@ nav {
         margin-bottom: 20px;
         background-color: $megenta;
     }
+}
+.pc {
+    display: none;
 }
 @media only screen and (orientation: landscape) and (min-width: 800px) {
     .sidenav{
@@ -132,9 +146,11 @@ nav {
             @for $i from 3 through 6 {
                 &:nth-child(#{$i}) {
                     padding-left: 20px;
-
                 }
             }
         }
+    }
+    .mobile {
+        display: none;
     }
 }
