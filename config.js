@@ -1,4 +1,5 @@
-{
+var info = {
     "website": "https://newsapi.orgs/account",
     "key": "e5c2d1ba225f4ef397ff71e86219785c"
 }
+export default info;
