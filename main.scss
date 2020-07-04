@@ -115,9 +115,30 @@ nav {
     }
 }
 .pc {
-    display: none;
+    display:none;
+    color: $ash;
+    padding: 0.5rem;
+    border: 1px solid $megenta;
+    margin: 3px;
+    &:hover {
+        background-color: $megenta;
+        color: white;
+    }
+}
+.mobile {
+    display: inline-block;
+    margin: 10px;
+}
+.mobile a{
+    text-decoration: none;
+    color: $ash;
+    padding: 0.5rem;
+    border: 1px solid $megenta;
 }
 @media only screen and (orientation: landscape) and (min-width: 800px) {
+    .pc {
+        display: inline-block;
+    }
     .sidenav{
             position: absolute;
             left: 0;
@@ -125,7 +146,10 @@ nav {
             height: 90vh;
             width: 30%;
             box-shadow: 10px 0px 10px -10px black;
-            overflow: scroll;         
+            overflow: scroll;
+            .mobile {
+                display: none;
+            }         
     }
     .content {
         box-sizing: border-box;
@@ -150,7 +174,5 @@ nav {
             }
         }
     }
-    .mobile {
-        display: none;
-    }
+    
 }

@@ -6,7 +6,7 @@ console.log(news_image);
 news_image.style.backgroundImage = "url('https://images.cointelegraph.com/images/740_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS9zdG9yYWdlL3VwbG9hZHMvdmlldy9iZmEyOWVmM2RlNWJiYjBmZDQ3Yjc4NGY1NTA1ZDYyYy5qcGc=.jpg')";
 var request = new XMLHttpRequest();
 var data;
-request.open('GET', 'http://newsapi.org/v2/everything?q=bitcoin&from=2020-03-13&sortBy=publishedAt&apiKey=e5c2d1ba225f4ef397ff71e86219785c');
+request.open('GET', 'http://newsapi.org/v2/everything?q=bitcoin&from=2020-03-13&sortBy=publishedAt&apiKey=9a25fca531ac417d9ed99436514c2591');
 request.onload = function() {
     data = JSON.parse(request.responseText).articles;
     console.log(data);
@@ -16,6 +16,7 @@ request.onload = function() {
     showMore.forEach(item => {
         item.addEventListener('click', (event) => {
             var i = event.target.id;
+            console.log(i);
             document.querySelector(".news_image").style.backgroundImage = `url('${data[i].urlToImage}')`;
             document.querySelector(".content h1").innerHTML = data[i].title;
             document.querySelector(".content p:nth-child(3)").innerHTML = data[i].content;
@@ -37,8 +38,8 @@ function addToNav(data) {
             <p>${element.description}</p>
             <p>Author: ${element.author}</p>
             <p>Published at: ${element.publishedAt}</p>
-            <p id="${i}">Show more</p>
-            <p id="${++i}">Show more</p>
+            <p class="pc" id="${i}" >Show more</p>
+            <p class="mobile" id="${++i}"><a href="./content.html">Show more</a></p>
         </div>
         `;
         sideNav.innerHTML += str;

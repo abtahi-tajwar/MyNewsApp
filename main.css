@@ -159,9 +159,33 @@ nav div:nth-child(2) .search input:focus {
 
 .pc {
   display: none;
+  color: #666666;
+  padding: 0.5rem;
+  border: 1px solid #980000;
+  margin: 3px;
+}
+
+.pc:hover {
+  background-color: #980000;
+  color: white;
+}
+
+.mobile {
+  display: inline-block;
+  margin: 10px;
+}
+
+.mobile a {
+  text-decoration: none;
+  color: #666666;
+  padding: 0.5rem;
+  border: 1px solid #980000;
 }
 
 @media only screen and (orientation: landscape) and (min-width: 800px) {
+  .pc {
+    display: inline-block;
+  }
   .sidenav {
     position: absolute;
     left: 0;
@@ -171,6 +195,9 @@ nav div:nth-child(2) .search input:focus {
     -webkit-box-shadow: 10px 0px 10px -10px black;
             box-shadow: 10px 0px 10px -10px black;
     overflow: scroll;
+  }
+  .sidenav .mobile {
+    display: none;
   }
   .content {
     -webkit-box-sizing: border-box;
@@ -200,9 +227,6 @@ nav div:nth-child(2) .search input:focus {
   }
   .content p:nth-child(6) {
     padding-left: 20px;
-  }
-  .mobile {
-    display: none;
   }
 }
 /*# sourceMappingURL=main.css.map */
